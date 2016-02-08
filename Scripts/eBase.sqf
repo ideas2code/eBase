@@ -13,37 +13,38 @@ https://community.bistudio.com/wiki/ctrlSetPosition
 orderIDcharacters = "ESG"; //Characters to be displayed at the start of each unique order number (can be a community name abbreviation ie: ESG (Evolved Survival Gaming)
 _Box1Name = "Starter";
 Box1Items = [
-['Exile_Item_Codelock',2],
-['Exile_Item_WoodDoorKit',2],
-['Exile_Item_WoodFloorKit',18],
-['Exile_Item_WoodStairsKit',1],
-['Exile_Item_WoodSupportKit',4],
-['Exile_Item_WoodWallKit',16],
+['Exile_Item_Flag',1],
+['Exile_Item_Matches',2],
+['Exile_Item_CookingPot',1],
+['Exile_Item_CanOpener',1],
+['Exile_Item_Handsaw',1],
+['Exile_Item_Grinder',1],
+['Exile_Item_CampFireKit',1],
 ['Exile_Item_WorkBenchKit',1]
 ];
-box1Cost = 1337;
+box1Cost = 3000;
 
-_Box2Name = "Basic";
+_Box2Name = "Supplies";
 Box2Items = [
-['Exile_Item_Codelock',2],
-['Exile_Item_WoodDoorKit',2],
-['Exile_Item_WoodFloorKit',18],
-['Exile_Item_WoodFloorPortKit',1],
-['Exile_Item_WoodGateKit',1],
-['Exile_Item_WorkBenchKit',1]
+['Exile_Item_EMRE',2],
+['Exile_Item_GloriousKnakworst',2],
+['Exile_Item_InstantCoffee',1],
+['Exile_Item_PowerDrink',1],
+['Exile_Item_Beer',1],
+['Exile_Item_EnergyDrink',1],
+['Exile_Item_CampFireKit',1],
+['Exile_Item_Matches',1],
+['Exile_Item_CookingPot',1]
 ];
-box2Cost = 1337;
+box2Cost = 2000;
 
 _Box3Name = "CCTV";
 Box3Items = [
 ['Exile_Item_Codelock',2],
-['Exile_Item_WoodDoorKit',2],
-['Exile_Item_WoodFloorKit',18],
-['Exile_Item_WoodFloorPortKit',1],
-['Exile_Item_WoodWallKit',16],
-['Exile_Item_WorkBenchKit',1]
+['Exile_Item_BaseCameraKit',6],
+['Exile_Item_Laptop',1]
 ];
-box3Cost = 1337;
+box3Cost = 15000;
 
 _Box4Name = "Small";
 Box4Items = [
@@ -58,32 +59,34 @@ Box4Items = [
 ['Exile_Item_WoodWallKit',16],
 ['Exile_Item_WorkBenchKit',1]
 ];
-box4Cost = 1337;
+box4Cost = 40000;
 
 _Box5Name = "Large";
 Box5Items = [
 ['Exile_Item_Codelock',2],
-['Exile_Item_WoodDoorKit',2],
-['Exile_Item_WoodFloorKit',18],
-['Exile_Item_WoodGateKit',1],
-['Exile_Item_WoodPlank',10],
-['Exile_Item_WoodStairsKit',1],
+['Exile_Item_WoodDoorKit',4],
+['Exile_Item_WoodFloorKit',25],
+['Exile_Item_WoodGateKit',2],
+['Exile_Item_WoodPlank',15],
+['Exile_Item_WoodStairsKit',2],
 ['Exile_Item_WoodSupportKit',4],
-['Exile_Item_WoodWallKit',16],
+['Exile_Item_WoodWallKit',20],
 ['Exile_Item_WorkBenchKit',1]
 ];
-box5Cost = 1337;
+box5Cost = 60000;
 
 _Box6Name = "Upgrade";
 Box6Items = [
-['Exile_Item_WoodGateKit',1],
-['Exile_Item_WoodPlank',10],
-['Exile_Item_WoodStairsKit',1],
-['Exile_Item_WoodSupportKit',4],
-['Exile_Item_WoodWallKit',16],
-['Exile_Item_WorkBenchKit',1]
+['Exile_Item_FortificationUpgrade',10],
+['Exile_Item_SafeKit',2],
+['Exile_Item_CamoTentKit',4],
+['Exile_Item_Foolbox',1],
+['Exile_Item_PortableGeneratorKit',1],
+['Exile_Item_FloodLightKit',5],
+['Exile_Item_DuctTape',3]
 ];
-box6Cost = 1337;
+box6Cost = 50000;
+
 
 /////////////////////
 //Config End
@@ -112,42 +115,42 @@ _Box1Btn = _display ctrlCreate ["RscExileXM8AppButton1x1", 851];
 _Box1Btn ctrlSetPosition [(7 - 3) * (0.025), (6 - 2) * (0.04)];
 _Box1Btn ctrlCommit 0;
 _Box1Btn ctrlSetFontHeight 0.05;
-_Box1Btn ctrlSetStructuredText (parseText (format ["%1",_Box1Name]));
+_Box1Btn ctrlSetStructuredText (parseText (format ["%1<br/><img image='\exile_assets\texture\ui\poptab_notification_ca.paa' size='1.0' shadow='true' />%2",_Box1Name, box1Cost]));
 _Box1Btn ctrlSetEventHandler ["ButtonClick", "[1]call fnc_preview_Load"];
 
 _Box2Btn = _display ctrlCreate ["RscExileXM8AppButton1x1", 852];
 _Box2Btn ctrlSetPosition [(14 - 3) * (0.025), (6 - 2) * (0.04)];
 _Box2Btn ctrlCommit 0;
 _Box2Btn ctrlSetFontHeight 0.05;
-_Box2Btn ctrlSetStructuredText (parseText (format ["%1",_Box2Name]));
+_Box2Btn ctrlSetStructuredText (parseText (format ["%1<br/><img image='\exile_assets\texture\ui\poptab_notification_ca.paa' size='1.0' shadow='true' />%2",_Box2Name, box2Cost]));
 _Box2Btn ctrlSetEventHandler ["ButtonClick", "[2]call fnc_preview_Load"];
 
 _Box3Btn = _display ctrlCreate ["RscExileXM8AppButton1x1", 853];
 _Box3Btn ctrlSetPosition [(7 - 3) * (0.025), (11.5 - 2) * (0.04)];
 _Box3Btn ctrlCommit 0;
 _Box3Btn ctrlSetFontHeight 0.05;
-_Box3Btn ctrlSetStructuredText (parseText (format ["%1",_Box3Name]));
+_Box3Btn ctrlSetStructuredText (parseText (format ["%1<br/><img image='\exile_assets\texture\ui\poptab_notification_ca.paa' size='1.0' shadow='true' />%2",_Box3Name, box3Cost]));
 _Box3Btn ctrlSetEventHandler ["ButtonClick", "[3]call fnc_preview_Load"];
 
 _Box4Btn = _display ctrlCreate ["RscExileXM8AppButton1x1", 854];
 _Box4Btn ctrlSetPosition [(14 - 3) * (0.025), (11.5 - 2) * (0.04)];
 _Box4Btn ctrlCommit 0;
 _Box4Btn ctrlSetFontHeight 0.05;
-_Box4Btn ctrlSetStructuredText (parseText (format ["%1",_Box4Name]));
+_Box4Btn ctrlSetStructuredText (parseText (format ["%1<br/><img image='\exile_assets\texture\ui\poptab_notification_ca.paa' size='1.0' shadow='true' />%2",_Box4Name, box4Cost]));
 _Box4Btn ctrlSetEventHandler ["ButtonClick", "[4]call fnc_preview_Load"];
 
 _Box5Btn = _display ctrlCreate ["RscExileXM8AppButton1x1", 855];
 _Box5Btn ctrlSetPosition [(7 - 3) * (0.025), (17 - 2) * (0.04)];
 _Box5Btn ctrlCommit 0;
 _Box5Btn ctrlSetFontHeight 0.05;
-_Box5Btn ctrlSetStructuredText (parseText (format ["%1",_Box5Name]));
+_Box5Btn ctrlSetStructuredText (parseText (format ["%1<br/><img image='\exile_assets\texture\ui\poptab_notification_ca.paa' size='1.0' shadow='true' />%2",_Box5Name, box5Cost]));
 _Box5Btn ctrlSetEventHandler ["ButtonClick", "[5]call fnc_preview_Load"];
 
 _Box6Btn = _display ctrlCreate ["RscExileXM8AppButton1x1", 856];
 _Box6Btn ctrlSetPosition [(14 - 3) * (0.025), (17 - 2) * (0.04)];
 _Box6Btn ctrlCommit 0;
 _Box6Btn ctrlSetFontHeight 0.05;
-_Box6Btn ctrlSetStructuredText (parseText (format ["%1",_Box6Name]));
+_Box6Btn ctrlSetStructuredText (parseText (format ["%1<br/><img image='\exile_assets\texture\ui\poptab_notification_ca.paa' size='1.0' shadow='true' />%2",_Box6Name, box6Cost]));
 _Box6Btn ctrlSetEventHandler ["ButtonClick", "[6]call fnc_preview_Load"];
 
 
@@ -239,34 +242,38 @@ a5 = _ranNumArr call BIS_fnc_selectRandom;
 a6 = _ranNumArr call BIS_fnc_selectRandom;
 a7 = _ranNumArr call BIS_fnc_selectRandom;
 
+fnc_deliverynotify = {
+  uiSleep 40;
+  hint format["Dear Customer: %1, Your order is complete and your package has been delivered right to your not-yet-existent front door - Buy it, build it, love it! - eBase.com",name player];
+};
+
+fnc_ordernotify = {
+  hint format["Dear Customer: %1, thanks for your order! your order number is '%2-%3%4%5%6%7%8' - eBase.com",name player, orderIDcharacters, a1, a2, a3, a4, a5, a6, a6, a7, a8];
+};
+
 fnc_buybox1 = {
   if (ExileClientPlayerMoney > box1Cost) then {
   _newPoptabs = ExileClientPlayerMoney - box1Cost;
   ENIGMA_UpdateStats = [player,_newPoptabs];
   publicVariableServer "ENIGMA_UpdateStats";
-  hint format["Dear Customer: %1, thanks for your order! your order number is '%2-%3%4%5%6%7%8' - eBase.com",name player, orderIDcharacters, a1, a2, a3, a4, a5, a6, a6, a7, a8];
+call fnc_ordernotify;
   _playerPOS = getPOSATL player;
-  //_crate = "Box_NATO_Wps_F" createVehicle [(_playerPOS select 0),(_playerPOS select 1),((_playerPOS select 2) +500)]; - Cancer
   _crate = createVehicle ["Exile_Container_StorageCrate", [(_playerPOS select 0),(_playerPOS select 1),((_playerPOS select 2) +100)], [], 0, "FLY"];
   clearMagazineCargoGlobal _crate;
   clearWeaponCargoGlobal _crate;
   clearItemCargoGlobal _crate;
   clearBackpackCargoGlobal _crate;
   {
-      _crate addItemCargo [(_x select 0), (_x select 1)];
+      _crate addItemCargoGlobal [(_x select 0), (_x select 1)];
   } forEach Box1Items;
 
   _cratePOS = getPOSATL _crate;
   _parachute = "B_Parachute_02_F" createVehicle (_cratePOS);
   _parachute setPos _cratePOS;
   _crate attachTo [_parachute, [0, 0, 0.1] ];
-  _crateposmark = createMarkerLocal ["delivery1", _cratePOS];
-  _crateposmark setMarkerType "mil_warning";
-  _crateposmark setMarkerText "eBase.com Delivery!";
-  uiSleep 5;
-  hint format["Dear Customer: %1, Your order is complete and your package has been delivered right to your not-yet-existent front door - Buy it, build it, love it! - eBase.com",name player];
+[] spawn { call fnc_deliverynotify; };
   } else {
-    closeDialog "24015";
+    (findDisplay 24015) closeDisplay 0;
   hint format["Dear Custom: %1, Your order has been declined due to insufficient funds",name player];
   };
 };
@@ -276,29 +283,24 @@ fnc_buybox2 = {
   _newPoptabs = ExileClientPlayerMoney - box2Cost;
   ENIGMA_UpdateStats = [player,_newPoptabs];
   publicVariableServer "ENIGMA_UpdateStats";
-  hint format["Dear Customer: %1, thanks for your order! your order number is '%2-%3%4%5%6%7%8' - eBase.com",name player, orderIDcharacters, a1, a2, a3, a4, a5, a6, a6, a7, a8];
+call fnc_ordernotify;
   _playerPOS = getPOSATL player;
-  //_crate = "Box_NATO_Wps_F" createVehicle [(_playerPOS select 0),(_playerPOS select 1),((_playerPOS select 2) +500)]; - Cancer
   _crate = createVehicle ["Exile_Container_StorageCrate", [(_playerPOS select 0),(_playerPOS select 1),((_playerPOS select 2) +100)], [], 0, "FLY"];
   clearMagazineCargoGlobal _crate;
   clearWeaponCargoGlobal _crate;
   clearItemCargoGlobal _crate;
   clearBackpackCargoGlobal _crate;
   {
-      _crate addItemCargo [(_x select 0), (_x select 1)];
+      _crate addItemCargoGlobal [(_x select 0), (_x select 1)];
   } forEach Box2Items;
 
   _cratePOS = getPOSATL _crate;
   _parachute = "B_Parachute_02_F" createVehicle (_cratePOS);
   _parachute setPos _cratePOS;
   _crate attachTo [_parachute, [0, 0, 0.1] ];
-  _crateposmark = createMarkerLocal ["delivery1", _cratePOS];
-  _crateposmark setMarkerType "mil_warning";
-  _crateposmark setMarkerText "eBase.com Delivery!";
-  uiSleep 5;
-  hint format["Dear Customer: %1, Your order is complete and your package has been delivered right to your not-yet-existent front door - Buy it, build it, love it! - eBase.com",name player];
+[] spawn { call fnc_deliverynotify; };
   } else {
-    closeDialog "24015";
+    (findDisplay 24015) closeDisplay 0;
   hint format["Dear Custom: %1, Your order has been declined due to insufficient funds",name player];
   };
 };
@@ -308,29 +310,24 @@ fnc_buybox3 = {
   _newPoptabs = ExileClientPlayerMoney - box3Cost;
   ENIGMA_UpdateStats = [player,_newPoptabs];
   publicVariableServer "ENIGMA_UpdateStats";
-  hint format["Dear Customer: %1, thanks for your order! your order number is '%2-%3%4%5%6%7%8' - eBase.com",name player, orderIDcharacters, a1, a2, a3, a4, a5, a6, a6, a7, a8];
+call fnc_ordernotify;
   _playerPOS = getPOSATL player;
-  //_crate = "Box_NATO_Wps_F" createVehicle [(_playerPOS select 0),(_playerPOS select 1),((_playerPOS select 2) +500)]; - Cancer
   _crate = createVehicle ["Exile_Container_StorageCrate", [(_playerPOS select 0),(_playerPOS select 1),((_playerPOS select 2) +100)], [], 0, "FLY"];
   clearMagazineCargoGlobal _crate;
   clearWeaponCargoGlobal _crate;
   clearItemCargoGlobal _crate;
   clearBackpackCargoGlobal _crate;
   {
-      _crate addItemCargo [(_x select 0), (_x select 1)];
+      _crate addItemCargoGlobal [(_x select 0), (_x select 1)];
   } forEach Box1Items;
 
   _cratePOS = getPOSATL _crate;
   _parachute = "B_Parachute_02_F" createVehicle (_cratePOS);
   _parachute setPos _cratePOS;
   _crate attachTo [_parachute, [0, 0, 0.1] ];
-  _crateposmark = createMarkerLocal ["delivery1", _cratePOS];
-  _crateposmark setMarkerType "mil_warning";
-  _crateposmark setMarkerText "eBase.com Delivery!";
-  uiSleep 5;
-  hint format["Dear Customer: %1, Your order is complete and your package has been delivered right to your not-yet-existent front door - Buy it, build it, love it! - eBase.com",name player];
+[] spawn { call fnc_deliverynotify; };
   } else {
-    closeDialog "24015";
+    (findDisplay 24015) closeDisplay 0;
   hint format["Dear Custom: %1, Your order has been declined due to insufficient funds",name player];
   };
 };
@@ -340,29 +337,24 @@ fnc_buybox4 = {
   _newPoptabs = ExileClientPlayerMoney - box4Cost;
   ENIGMA_UpdateStats = [player,_newPoptabs];
   publicVariableServer "ENIGMA_UpdateStats";
-  hint format["Dear Customer: %1, thanks for your order! your order number is '%2-%3%4%5%6%7%8' - eBase.com",name player, orderIDcharacters, a1, a2, a3, a4, a5, a6, a6, a7, a8];
+call fnc_ordernotify;
   _playerPOS = getPOSATL player;
-  //_crate = "Box_NATO_Wps_F" createVehicle [(_playerPOS select 0),(_playerPOS select 1),((_playerPOS select 2) +500)]; - Cancer
   _crate = createVehicle ["Exile_Container_StorageCrate", [(_playerPOS select 0),(_playerPOS select 1),((_playerPOS select 2) +100)], [], 0, "FLY"];
   clearMagazineCargoGlobal _crate;
   clearWeaponCargoGlobal _crate;
   clearItemCargoGlobal _crate;
   clearBackpackCargoGlobal _crate;
   {
-      _crate addItemCargo [(_x select 0), (_x select 1)];
+      _crate addItemCargoGlobal [(_x select 0), (_x select 1)];
   } forEach Box1Items;
 
   _cratePOS = getPOSATL _crate;
   _parachute = "B_Parachute_02_F" createVehicle (_cratePOS);
   _parachute setPos _cratePOS;
   _crate attachTo [_parachute, [0, 0, 0.1] ];
-  _crateposmark = createMarkerLocal ["delivery1", _cratePOS];
-  _crateposmark setMarkerType "mil_warning";
-  _crateposmark setMarkerText "eBase.com Delivery!";
-  uiSleep 5;
-  hint format["Dear Customer: %1, Your order is complete and your package has been delivered right to your not-yet-existent front door - Buy it, build it, love it! - eBase.com",name player];
+[] spawn { call fnc_deliverynotify; };
   } else {
-    closeDialog "24015";
+    (findDisplay 24015) closeDisplay 0;
   hint format["Dear Custom: %1, Your order has been declined due to insufficient funds",name player];
   };
 };
@@ -372,29 +364,23 @@ fnc_buybox5 = {
   _newPoptabs = ExileClientPlayerMoney - box5Cost;
   ENIGMA_UpdateStats = [player,_newPoptabs];
   publicVariableServer "ENIGMA_UpdateStats";
-  hint format["Dear Customer: %1, thanks for your order! your order number is '%2-%3%4%5%6%7%8' - eBase.com",name player, orderIDcharacters, a1, a2, a3, a4, a5, a6, a6, a7, a8];
+    call fnc_ordernotify;
   _playerPOS = getPOSATL player;
-  //_crate = "Box_NATO_Wps_F" createVehicle [(_playerPOS select 0),(_playerPOS select 1),((_playerPOS select 2) +500)]; - Cancer
   _crate = createVehicle ["Exile_Container_StorageCrate", [(_playerPOS select 0),(_playerPOS select 1),((_playerPOS select 2) +100)], [], 0, "FLY"];
   clearMagazineCargoGlobal _crate;
   clearWeaponCargoGlobal _crate;
   clearItemCargoGlobal _crate;
   clearBackpackCargoGlobal _crate;
   {
-      _crate addItemCargo [(_x select 0), (_x select 1)];
+      _crate addItemCargoGlobal [(_x select 0), (_x select 1)];
   } forEach Box1Items;
-
   _cratePOS = getPOSATL _crate;
   _parachute = "B_Parachute_02_F" createVehicle (_cratePOS);
   _parachute setPos _cratePOS;
   _crate attachTo [_parachute, [0, 0, 0.1] ];
-  _crateposmark = createMarkerLocal ["delivery1", _cratePOS];
-  _crateposmark setMarkerType "mil_warning";
-  _crateposmark setMarkerText "eBase.com Delivery!";
-  uiSleep 5;
-  hint format["Dear Customer: %1, Your order is complete and your package has been delivered right to your not-yet-existent front door - Buy it, build it, love it! - eBase.com",name player];
+[] spawn { call fnc_deliverynotify; };
   } else {
-    closeDialog "24015";
+    (findDisplay 24015) closeDisplay 0;
   hint format["Dear Custom: %1, Your order has been declined due to insufficient funds",name player];
   };
 };
@@ -404,29 +390,24 @@ fnc_buybox6 = {
   _newPoptabs = ExileClientPlayerMoney - box6Cost;
   ENIGMA_UpdateStats = [player,_newPoptabs];
   publicVariableServer "ENIGMA_UpdateStats";
-  hint format["Dear Customer: %1, thanks for your order! your order number is '%2-%3%4%5%6%7%8' - eBase.com",name player, orderIDcharacters, a1, a2, a3, a4, a5, a6, a6, a7, a8];
+call fnc_ordernotify;
   _playerPOS = getPOSATL player;
-  //_crate = "Box_NATO_Wps_F" createVehicle [(_playerPOS select 0),(_playerPOS select 1),((_playerPOS select 2) +500)]; - Cancer
   _crate = createVehicle ["Exile_Container_StorageCrate", [(_playerPOS select 0),(_playerPOS select 1),((_playerPOS select 2) +100)], [], 0, "FLY"];
   clearMagazineCargoGlobal _crate;
   clearWeaponCargoGlobal _crate;
   clearItemCargoGlobal _crate;
   clearBackpackCargoGlobal _crate;
   {
-      _crate addItemCargo [(_x select 0), (_x select 1)];
+      _crate addItemCargoGlobal [(_x select 0), (_x select 1)];
   } forEach Box6Items;
 
   _cratePOS = getPOSATL _crate;
   _parachute = "B_Parachute_02_F" createVehicle (_cratePOS);
   _parachute setPos _cratePOS;
   _crate attachTo [_parachute, [0, 0, 0.1] ];
-  _crateposmark = createMarkerLocal ["delivery1", _cratePOS];
-  _crateposmark setMarkerType "mil_warning";
-  _crateposmark setMarkerText "eBase.com Delivery!";
-  uiSleep 5;
-  hint format["Dear Customer: %1, Your order is complete and your package has been delivered right to your not-yet-existent front door - Buy it, build it, love it! - eBase.com",name player];
+[] spawn { call fnc_deliverynotify; };
   } else {
-    closeDialog "24015";
+    (findDisplay 24015) closeDisplay 0;
   hint format["Dear Custom: %1, Your order has been declined due to insufficient funds",name player];
   };
 };
@@ -441,6 +422,7 @@ fnc_buyselected = {
     case (6): {call fnc_buybox6;};
   };
 };
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
