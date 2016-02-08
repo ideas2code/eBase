@@ -243,7 +243,7 @@ a6 = _ranNumArr call BIS_fnc_selectRandom;
 a7 = _ranNumArr call BIS_fnc_selectRandom;
 
 fnc_deliverynotify = {
-  uiSleep 40;
+  uiSleep 20;
   hint format["Dear Customer: %1, Your order is complete and your package has been delivered right to your not-yet-existent front door - Buy it, build it, love it! - eBase.com",name player];
 };
 
