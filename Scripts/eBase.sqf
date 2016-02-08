@@ -319,7 +319,7 @@ call fnc_ordernotify;
   clearBackpackCargoGlobal _crate;
   {
       _crate addItemCargoGlobal [(_x select 0), (_x select 1)];
-  } forEach Box1Items;
+  } forEach Box3Items;
 
   _cratePOS = getPOSATL _crate;
   _parachute = "B_Parachute_02_F" createVehicle (_cratePOS);
@@ -346,7 +346,7 @@ call fnc_ordernotify;
   clearBackpackCargoGlobal _crate;
   {
       _crate addItemCargoGlobal [(_x select 0), (_x select 1)];
-  } forEach Box1Items;
+  } forEach Box4Items;
 
   _cratePOS = getPOSATL _crate;
   _parachute = "B_Parachute_02_F" createVehicle (_cratePOS);
@@ -373,7 +373,7 @@ fnc_buybox5 = {
   clearBackpackCargoGlobal _crate;
   {
       _crate addItemCargoGlobal [(_x select 0), (_x select 1)];
-  } forEach Box1Items;
+  } forEach Box5Items;
   _cratePOS = getPOSATL _crate;
   _parachute = "B_Parachute_02_F" createVehicle (_cratePOS);
   _parachute setPos _cratePOS;
